@@ -25,6 +25,10 @@
                         <rect key="frame" x="18" y="17" width="20" height="248"/>
                         <animations/>
                         <sliderCell key="cell" continuous="YES" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="WyM-u9-jvy"/>
+                        <connections>
+                            <binding destination="-2" name="enabled" keyPath="isOn" id="LIk-Cp-4ft"/>
+                            <binding destination="-2" name="value" keyPath="temperature" id="F97-Fm-tkB"/>
+                        </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5pr-ls-Bj4">
                         <rect key="frame" x="42" y="133" width="37" height="17"/>
@@ -34,22 +38,44 @@
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="temperature" id="LQr-99-Zri"/>
+                        </connections>
                     </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpA-hI-ee5">
-                        <rect key="frame" x="143" y="192" width="88" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Warmer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wR0-YQ-42T">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7d-aU-Dyy">
-                        <rect key="frame" x="147" y="55" width="80" height="32"/>
+                        <rect key="frame" x="147" y="65" width="80" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Cooler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jKc-ni-j4E">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="makeCooler:" target="-2" id="oJU-KE-KxL"/>
+                            <binding destination="-2" name="enabled" keyPath="isOn" id="rnl-S9-cIK"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jek-aF-Aad">
+                        <rect key="frame" x="163" y="18" width="58" height="19"/>
+                        <animations/>
+                        <buttonCell key="cell" type="recessed" title="Power" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RLB-ei-ugB">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="12"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="isOn" id="TNe-Ox-bBk"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpA-hI-ee5">
+                        <rect key="frame" x="143" y="185" width="88" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Warmer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wR0-YQ-42T">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="makeWarmer:" target="-2" id="AUl-YK-wyq"/>
+                            <binding destination="-2" name="enabled" keyPath="isOn" id="yUP-hi-HAE"/>
+                        </connections>
                     </button>
                 </subviews>
                 <animations/>
