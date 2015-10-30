@@ -47,6 +47,7 @@
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
+                                            <sortDescriptor key="sortDescriptorPrototype" selector="caseInsensitiveCompare:" sortKey="name"/>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="Bcf-6G-FIL">
@@ -84,6 +85,7 @@
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
+                                            <sortDescriptor key="sortDescriptorPrototype" selector="compare:" sortKey="raise"/>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="cbE-i9-jta">
@@ -116,6 +118,8 @@
                                     </tableColumns>
                                     <connections>
                                         <binding destination="akN-bv-WO8" name="content" keyPath="arrangedObjects" id="dDT-54-Y5G"/>
+                                        <binding destination="akN-bv-WO8" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="dDT-54-Y5G" id="aW8-gy-ReY"/>
+                                        <binding destination="akN-bv-WO8" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="aW8-gy-ReY" id="uem-Pr-w1d"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -156,7 +160,14 @@
                         <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="83G-u4-VAU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
                         </buttonCell>
+                        <connections>
+                            <action selector="remove:" target="akN-bv-WO8" id="qIx-a5-uoV"/>
+                            <binding destination="akN-bv-WO8" name="enabled" keyPath="canRemove" id="EQj-Ia-crV"/>
+                        </connections>
                     </button>
                 </subviews>
                 <animations/>
