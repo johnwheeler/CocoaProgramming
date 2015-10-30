@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:RaiseMan/RaiseMan.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Thermostat/Thermostat.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SpeakLine/SpeakLine.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RGBWell/RGBWell.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:RandomPassword/RandomPassword.xcodeproj">
+   </FileRef>
+</Workspace>
