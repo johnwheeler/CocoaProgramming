@@ -13,8 +13,6 @@ class Employee : NSObject {
     var raise: Float = 0.05
     
     func validateRaise(ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>) throws {
-        print("validateRaise called")
-        
         let raiseNumber = ioValue.memory
         if raiseNumber == nil {
             let domain = "UserInputValidationErrorDomain"
