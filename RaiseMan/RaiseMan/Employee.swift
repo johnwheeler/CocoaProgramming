@@ -8,9 +8,30 @@
 
 import Foundation
 
-class Employee : NSObject {
+class Employee : NSObject, NSCoding {
     var name: String? = "New Employee"
     var raise: Float = 0.05
+    
+    override init() {
+        super.init()
+    }
+    
+    // MARK: - NSCoding
+    
+    required init(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObjectForKey("name") as! String?
+        raise = aDecoder.decodeFloatForKey("raise")
+        super.init()
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        if let name = name {
+            aCoder.encodeObject(name, forKey: "name")
+        }
+        aCoder.encodeFloat(raise, forKey: "raise")
+    }
+    
+    // MARK: - Key/Value validation
     
     func validateRaise(ioValue: AutoreleasingUnsafeMutablePointer<AnyObject?>) throws {
         let raiseNumber = ioValue.memory

@@ -35,7 +35,6 @@ class Document: NSDocument, NSWindowDelegate {
 
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
-        // Add any code here that needs to be executed once the windowController has loaded the document's window.
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -43,16 +42,21 @@ class Document: NSDocument, NSWindowDelegate {
     }
 
     override var windowNibName: String? {
-        // Returns the nib file name of the document
-        // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
         return "Document"
     }
 
     override func dataOfType(typeName: String) throws -> NSData {
-        throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+        // End editing
+        tableView.window?.endEditingFor(nil)
+        
+        // Create an NSData object from the employees array
+        return NSKeyedArchiver.archivedDataWithRootObject(employees)
     }
 
     override func readFromData(data: NSData, ofType typeName: String) throws {
+        print("About to read data of type \(typeName).")
+        
+        employees = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Employee]
     }
     
     // MARK: - Accessors

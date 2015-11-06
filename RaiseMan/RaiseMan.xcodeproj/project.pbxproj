@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3283501BED4457003BB816 /* txt.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0A32834F1BED4457003BB816 /* txt.icns */; };
 		0ADFB8191BE3031C0089984E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFB8181BE3031C0089984E /* AppDelegate.swift */; };
 		0ADFB81B1BE3031C0089984E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADFB81A1BE3031C0089984E /* Document.swift */; };
 		0ADFB81E1BE3031C0089984E /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADFB81C1BE3031C0089984E /* Document.xib */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A32834F1BED4457003BB816 /* txt.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = txt.icns; sourceTree = "<group>"; };
 		0ADFB8151BE3031C0089984E /* RaiseMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiseMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ADFB8181BE3031C0089984E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ADFB81A1BE3031C0089984E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A32834E1BED4424003BB816 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A32834F1BED4457003BB816 /* txt.icns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0ADFB80C1BE3031C0089984E = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		0ADFB8171BE3031C0089984E /* RaiseMan */ = {
 			isa = PBXGroup;
 			children = (
+				0A32834E1BED4424003BB816 /* Supporting Files */,
 				0ADFB8181BE3031C0089984E /* AppDelegate.swift */,
 				0ADFB81A1BE3031C0089984E /* Document.swift */,
 				0ADFB81C1BE3031C0089984E /* Document.xib */,
@@ -128,6 +139,7 @@
 				0ADFB8201BE3031C0089984E /* Assets.xcassets in Resources */,
 				0ADFB81E1BE3031C0089984E /* Document.xib in Resources */,
 				0ADFB8231BE3031C0089984E /* MainMenu.xib in Resources */,
+				0A3283501BED4457003BB816 /* txt.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
