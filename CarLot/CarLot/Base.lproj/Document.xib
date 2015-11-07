@@ -26,7 +26,7 @@
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k14-ca-Q39">
                         <rect key="frame" x="20" y="286" width="561" height="195"/>
                         <clipView key="contentView" ambiguous="YES" id="syM-Ef-1AD">
-                            <rect key="frame" x="1" y="23" width="559" height="171"/>
+                            <rect key="frame" x="1" y="0.0" width="559" height="194"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="meZ-Z9-E8X" viewBased="YES" id="EgC-l5-h6z">
@@ -71,8 +71,8 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="TEb-BP-FzS" name="fontBold" keyPath="objectValue.onSpecial" id="Qno-Fs-ogn"/>
                                                                 <binding destination="TEb-BP-FzS" name="value" keyPath="objectValue.makeModel" id="Bt0-h5-LTl"/>
+                                                                <binding destination="TEb-BP-FzS" name="fontBold" keyPath="objectValue.onSpecial" id="Qno-Fs-ogn"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
@@ -168,7 +168,7 @@
                         </clipView>
                         <animations/>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="yam-5J-594">
-                            <rect key="frame" x="1" y="249" width="756" height="15"/>
+                            <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <animations/>
                         </scroller>
@@ -203,7 +203,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="add:" target="kbr-ZF-hJf" id="qES-jh-HVF"/>
+                            <action selector="addCar:" target="kbr-ZF-hJf" id="gq4-V9-9Ve"/>
                         </connections>
                     </button>
                     <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-39-mxY">
@@ -293,6 +293,7 @@
         <arrayController mode="entity" entityName="Car" automaticallyPreparesContent="YES" id="kbr-ZF-hJf" userLabel="Cars" customClass="CarArrayController" customModule="CarLot" customModuleProvider="target">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="RHt-d1-MKB"/>
+                <outlet property="tableView" destination="EgC-l5-h6z" id="Wa0-VW-Gbv"/>
             </connections>
         </arrayController>
     </objects>
