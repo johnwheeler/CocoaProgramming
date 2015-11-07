@@ -33,6 +33,9 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="zgk-VP-UKK"/>
+                        </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-rN-26b">
                         <rect key="frame" x="484" y="13" width="78" height="32"/>
