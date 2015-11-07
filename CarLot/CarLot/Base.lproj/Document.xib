@@ -237,7 +237,7 @@
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     </datePickerCell>
                                     <connections>
-                                        <binding destination="kbr-ZF-hJf" name="value" keyPath="selection.datePurchased" id="GuH-jC-YRy"/>
+                                        <binding destination="kbr-ZF-hJf" name="value" keyPath="selection.datePurchased" id="0in-1I-247"/>
                                     </connections>
                                 </datePicker>
                                 <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9q-GN-vTf">
@@ -290,7 +290,7 @@
             </connections>
             <point key="canvasLocation" x="533.5" y="596.5"/>
         </window>
-        <arrayController mode="entity" entityName="Car" automaticallyPreparesContent="YES" id="kbr-ZF-hJf" userLabel="Cars">
+        <arrayController mode="entity" entityName="Car" automaticallyPreparesContent="YES" id="kbr-ZF-hJf" userLabel="Cars" customClass="CarArrayController" customModule="CarLot" customModuleProvider="target">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="RHt-d1-MKB"/>
             </connections>
