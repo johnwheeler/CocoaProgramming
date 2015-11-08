@@ -167,6 +167,32 @@ class Document: NSDocument, NSWindowDelegate {
         // Begin the edit in the first column
         print("starting edit of \(employee) in row \(row)")
         tableView.editColumn(0, row: row, withEvent: nil, select: true)
+    }
     
+    @IBAction func removeEmployee(sender: NSButton) {
+        let selectedPeople = arrayController.selectedObjects as! [Employee]
+        let alert = NSAlert()
+        alert.messageText = "Do you really want to remove these people?"
+        alert.informativeText = "\(selectedPeople.count) people will be removed."
+        alert.addButtonWithTitle("Remove")
+        alert.addButtonWithTitle("Cancel")
+        let window = sender.window!
+        alert.beginSheetModalForWindow(window, completionHandler: { (response) -> Void in
+            // If the user chose "Remove" tell the array controller to delete the people
+            switch response {
+            case NSAlertFirstButtonReturn:
+                // The array controller will delete the selected objects
+                // The argument to remove() is ignored
+                self.arrayController.remove(nil)
+            default: break
+            }
+        })
     }
 }
+
+
+
+
+
+
+
