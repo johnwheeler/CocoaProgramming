@@ -9,13 +9,22 @@
 import Cocoa
 
 class ChatWindowController: NSWindowController {
+    
+    dynamic var log: NSAttributedString = NSAttributedString(string: "")
+    dynamic var message: String?
 
+    @IBOutlet var textView: NSTextView!
+    
     override var windowNibName: String {
         return "ChatWindowController"
     }
+    
+    // MARK: - Lifecycle
     
     override func windowDidLoad() {
         super.windowDidLoad()
     }
     
+    @IBAction func send(sender: NSButton) {
+    }
 }
