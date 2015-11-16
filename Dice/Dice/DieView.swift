@@ -22,8 +22,27 @@ class DieView: NSView {
         }
     }
     
+    var highlighted: Bool = false {
+        didSet {
+            needsDisplay = true
+        }
+    }
+    
     func randomize() {
         intValue = Int(arc4random_uniform(6)) + 1
+    }
+    
+    override func viewDidMoveToWindow() {
+        window?.acceptsMouseMovedEvents = true
+        
+        let options: NSTrackingAreaOptions = [.MouseEnteredAndExited, .ActiveAlways, .InVisibleRect]
+        
+        let trackingArea = NSTrackingArea(rect: NSRect(),
+            options: options,
+            owner: self,
+            userInfo: nil)
+        
+        addTrackingArea(trackingArea)
     }
     
     override var intrinsicContentSize: NSSize {
@@ -34,6 +53,13 @@ class DieView: NSView {
         let backgroundColor = NSColor.lightGrayColor()
         backgroundColor.set()
         NSBezierPath.fillRect(bounds)
+        
+//        // Chap 19 x-tra credit - rollovers
+//        if (highlighted) {
+//            let highlightColor = NSColor.controlHighlightColor()
+//            highlightColor.set()
+//            NSBezierPath.fillRect(bounds)
+//        }
         
         drawDieWithSize(bounds.size)
     }
@@ -122,6 +148,14 @@ class DieView: NSView {
             randomize()
         }
         pressed = false
+    }
+    
+    override func mouseEntered(theEvent: NSEvent) {
+        highlighted = true
+    }
+    
+    override func mouseExited(theEvent: NSEvent) {
+        highlighted = false
     }
     
     // MARK: - First Responder
