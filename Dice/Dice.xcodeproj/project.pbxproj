@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A33F5621BFCF7BF00B4AF81 /* NSString+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A33F5611BFCF7BF00B4AF81 /* NSString+Drawing.swift */; };
 		0A6049691BF3B1D3006F1A9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6049681BF3B1D3006F1A9E /* AppDelegate.swift */; };
 		0A60496B1BF3B1D3006F1A9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A60496A1BF3B1D3006F1A9E /* Assets.xcassets */; };
 		0A60496E1BF3B1D3006F1A9E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A60496C1BF3B1D3006F1A9E /* MainMenu.xib */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A33F5611BFCF7BF00B4AF81 /* NSString+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Drawing.swift"; sourceTree = "<group>"; };
 		0A6049651BF3B1D3006F1A9E /* Dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6049681BF3B1D3006F1A9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A60496A1BF3B1D3006F1A9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				0A6049751BF3B1F5006F1A9E /* MainWindowController.swift */,
 				0A6049761BF3B1F5006F1A9E /* MainWindowController.xib */,
 				0A6049961BF4E2CA006F1A9E /* DieView.swift */,
+				0A33F5611BFCF7BF00B4AF81 /* NSString+Drawing.swift */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A33F5621BFCF7BF00B4AF81 /* NSString+Drawing.swift in Sources */,
 				0A6049771BF3B1F5006F1A9E /* MainWindowController.swift in Sources */,
 				0A6049691BF3B1D3006F1A9E /* AppDelegate.swift in Sources */,
 				0A6049971BF4E2CA006F1A9E /* DieView.swift in Sources */,
@@ -281,6 +285,7 @@
 				0A6049741BF3B1D3006F1A9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -32,6 +32,23 @@ class DieView: NSView {
         intValue = Int(arc4random_uniform(6)) + 1
     }
     
+    @IBAction func savePDF(sender: AnyObject) {
+        let savePanel = NSSavePanel()
+        savePanel.allowedFileTypes = ["pdf"]
+        savePanel.beginSheetModalForWindow(window!) {
+            [unowned savePanel] (result) in
+            if result == NSModalResponseOK {
+                let data = self.dataWithPDFInsideRect(self.bounds)
+                let ok = data.writeToURL(savePanel.URL!, atomically: true)
+                if !ok {
+                    let alert = NSAlert()
+                    alert.informativeText = "Error saving PDF"
+                    alert.runModal()
+                }
+            }
+        }
+    }
+    
     override func viewDidMoveToWindow() {
         window?.acceptsMouseMovedEvents = true
         
@@ -125,6 +142,17 @@ class DieView: NSView {
                     drawDot(0, v: 0.5) // Mid left/right
                     drawDot(1, v: 0.5)
                 }
+            } else {
+                let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+                paraStyle.alignment = .Center
+                let font = NSFont.systemFontOfSize(edgeLength * 0.5)
+                let attrs = [
+                    NSForegroundColorAttributeName: NSColor.blackColor(),
+                    NSFontAttributeName: font,
+                    NSParagraphStyleAttributeName: paraStyle
+                ]
+                let string = "\(intValue)"
+                string.drawCenteredInRect(dieFrame, attributes: attrs)
             }
         }
     }

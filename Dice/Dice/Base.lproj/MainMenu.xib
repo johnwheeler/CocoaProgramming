@@ -103,6 +103,12 @@
                                     <action selector="saveDocumentAs:" target="-1" id="mDf-zr-I0C"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Save As PDF..." id="TaY-yB-C0G">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="savePDF:" target="-1" id="nMN-Sp-eKZ"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Revert to Saved" id="KaW-ft-85H">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
