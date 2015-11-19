@@ -106,7 +106,7 @@
                             <menuItem title="Save As PDF..." id="TaY-yB-C0G">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="savePDF:" target="-1" id="nMN-Sp-eKZ"/>
+                                    <action selector="savePDF:" target="-1" id="7m2-2D-Cpf"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Revert to Saved" id="KaW-ft-85H">

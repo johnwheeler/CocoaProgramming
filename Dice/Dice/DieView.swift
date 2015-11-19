@@ -32,7 +32,20 @@ class DieView: NSView {
         intValue = Int(arc4random_uniform(6)) + 1
     }
     
-    @IBAction func savePDF(sender: AnyObject) {
+    @IBAction func cut(sender: AnyObject?) {
+        writeToPasteboard(NSPasteboard.generalPasteboard())
+        intValue = nil
+    }
+        
+    @IBAction func copy(sender: AnyObject?) {
+        writeToPasteboard(NSPasteboard.generalPasteboard())
+    }
+    
+    @IBAction func paste(sender: AnyObject?) {
+        readFromPasteboard(NSPasteboard.generalPasteboard())
+    }
+    
+    @IBAction func savePDF(sender: AnyObject?) {
         let savePanel = NSSavePanel()
         savePanel.allowedFileTypes = ["pdf"]
         savePanel.beginSheetModalForWindow(window!) {
@@ -46,6 +59,25 @@ class DieView: NSView {
                     alert.runModal()
                 }
             }
+        }
+    }
+    
+    override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
+        switch menuItem.action {
+        case Selector("copy:"):
+            return intValue != nil
+        case Selector("cut:"):
+            return intValue != nil
+        case Selector("paste:"):
+            let pasteboard = NSPasteboard.generalPasteboard()
+            let objects = pasteboard.readObjectsForClasses([NSString.self], options: [:]) as! [String]
+            if let val = objects.first {
+                return Int(val) != nil
+            }
+            return false
+        default:
+            // http://forums.bignerdranch.com/viewtopic.php?f=533&t=10342
+            return true // super.validateMenuItem(menuItem)
         }
     }
     
@@ -225,6 +257,26 @@ class DieView: NSView {
     
     override func insertBacktab(sender: AnyObject?) {
         window?.selectPreviousKeyView(sender)
+    }
+    
+    // MARK: - Pasteboard
+    
+    func writeToPasteboard(pasteboard: NSPasteboard) {
+        if let intValue = intValue {
+            pasteboard.clearContents()
+            pasteboard.writeObjects(["\(intValue)"])
+        }
+    }
+    
+    func readFromPasteboard(pasteboard: NSPasteboard) -> Bool {
+        let objects = pasteboard.readObjectsForClasses([NSString.self], options: [:]) as! [String]
+        
+        if let str = objects.first {
+            intValue = Int(str)
+            return true
+        }
+        
+        return false
     }
 }
 
