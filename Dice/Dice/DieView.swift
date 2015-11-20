@@ -12,6 +12,8 @@ class DieView: NSView, NSDraggingSource {
     
     var mouseDownEvent: NSEvent?
     
+    var rollsRemaining: Int = 0
+    
     var intValue: Int? = 5 {
         didSet {
             needsDisplay = true
@@ -52,6 +54,24 @@ class DieView: NSView, NSDraggingSource {
     
     func randomize() {
         intValue = Int(arc4random_uniform(6)) + 1
+    }
+    
+    func roll() {
+        rollsRemaining = 10
+        NSTimer.scheduledTimerWithTimeInterval(0.15, target: self, selector: Selector("rollTick:"), userInfo: nil, repeats: true)
+        window?.makeFirstResponder(nil)
+    }
+    
+    func rollTick(sender: NSTimer) {
+        let lastIntValue = intValue
+        while intValue == lastIntValue {
+            randomize()
+        }
+        rollsRemaining--
+        if rollsRemaining == 0 {
+            sender.invalidate()
+            window?.makeFirstResponder(self)
+        }
     }
     
     @IBAction func cut(sender: AnyObject?) {
@@ -265,7 +285,7 @@ class DieView: NSView, NSDraggingSource {
     override func mouseUp(theEvent: NSEvent) {
         Swift.print("mouseUp clickCount: \(theEvent.clickCount)")
         if theEvent.clickCount == 2 && pressed {
-            randomize()
+            roll()
         }
         pressed = false
     }
