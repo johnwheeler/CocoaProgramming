@@ -17,4 +17,19 @@ class MainWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     }
+    
+    @IBAction func showDieConfiguration(sender: AnyObject?) {
+        if let window = window, let dieView = window.firstResponder as? DieView {
+            let windowController = ConfigurationWindowController()
+            windowController.configuration = DieConfiguration(color: dieView.color, rolls: dieView.numberOfTimesToRoll)
+            
+            windowController.presentAsSheetOnWindow(window) {
+                configuration in
+                if let configuration = configuration {
+                    dieView.color = configuration.color
+                    dieView.numberOfTimesToRoll = configuration.rolls
+                }
+            }
+        }
+    }
 }

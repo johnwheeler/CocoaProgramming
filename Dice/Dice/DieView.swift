@@ -10,10 +10,6 @@ import Cocoa
 
 class DieView: NSView, NSDraggingSource {
     
-    var mouseDownEvent: NSEvent?
-    
-    var rollsRemaining: Int = 0
-    
     var intValue: Int? = 5 {
         didSet {
             needsDisplay = true
@@ -38,6 +34,19 @@ class DieView: NSView, NSDraggingSource {
         }
     }
     
+    var color: NSColor = NSColor.whiteColor() {
+        didSet {
+            needsDisplay = true
+        }
+    }
+    
+    var numberOfTimesToRoll: Int = 10
+    
+    var mouseDownEvent: NSEvent?
+    
+    var rollsRemaining: Int = 0
+    
+    
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         commonInit()
@@ -57,7 +66,7 @@ class DieView: NSView, NSDraggingSource {
     }
     
     func roll() {
-        rollsRemaining = 10
+        rollsRemaining = numberOfTimesToRoll
         NSTimer.scheduledTimerWithTimeInterval(0.15, target: self, selector: Selector("rollTick:"), userInfo: nil, repeats: true)
         window?.makeFirstResponder(nil)
     }
@@ -68,7 +77,7 @@ class DieView: NSView, NSDraggingSource {
             randomize()
         }
         rollsRemaining--
-        if rollsRemaining == 0 {
+        if rollsRemaining <= 0 {
             sender.invalidate()
             window?.makeFirstResponder(self)
         }
@@ -153,7 +162,7 @@ class DieView: NSView, NSDraggingSource {
 //        }
         
         if highlightForDragging {
-            let gradient = NSGradient(startingColor: NSColor.whiteColor(), endingColor: backgroundColor)!
+            let gradient = NSGradient(startingColor: color, endingColor: backgroundColor)!
             gradient.drawInRect(bounds, relativeCenterPosition: NSZeroPoint)
         } else {
             drawDieWithSize(bounds.size)
@@ -187,7 +196,7 @@ class DieView: NSView, NSDraggingSource {
             shadow.set()
             
             // Draw the rounded shape of the die profile
-            NSColor.whiteColor().set()
+            color.set()
             NSBezierPath(roundedRect: dieFrame, xRadius: cornerRadius, yRadius: cornerRadius).fill()
             
             NSGraphicsContext.restoreGraphicsState()
