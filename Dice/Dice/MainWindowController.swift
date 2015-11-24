@@ -32,4 +32,13 @@ class MainWindowController: NSWindowController {
             }
         }
     }
+    
+    override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
+        switch menuItem.action {
+        case Selector("showDieConfiguration:"):
+            return window?.firstResponder is DieView
+        default:
+            return true
+        }
+    }
 }
