@@ -59,6 +59,14 @@ class Document: NSDocument, NSWindowDelegate {
         employees = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Employee]
     }
     
+    override func printOperationWithSettings(printSettings: [String : AnyObject]) throws -> NSPrintOperation {
+        let employeesPrintView = EmployeesPrintingView(employees: employees)
+        let printInfo: NSPrintInfo = self.printInfo
+        let printOperation = NSPrintOperation(view: employeesPrintView, printInfo: printInfo)
+        
+        return printOperation
+    }
+    
     // MARK: - Accessors
     
     func insertObject(employee: Employee, inEmployeesAtIndex index: Int) {
