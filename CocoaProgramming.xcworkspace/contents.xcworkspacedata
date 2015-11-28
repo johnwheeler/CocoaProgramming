@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RanchForcast/RanchForcast.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:AutoLabelOut/AutoLabelOut.xcodeproj">
    </FileRef>
    <FileRef
