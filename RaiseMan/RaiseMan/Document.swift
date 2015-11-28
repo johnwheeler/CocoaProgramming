@@ -171,18 +171,22 @@ class Document: NSDocument, NSWindowDelegate {
     
     @IBAction func removeEmployee(sender: NSButton) {
         let selectedPeople = arrayController.selectedObjects as! [Employee]
+        
         let alert = NSAlert()
-        alert.messageText = "Do you really want to remove these people?"
+        alert.messageText = NSLocalizedString("REMOVE_MESSAGE", comment: "The remove alert's messageText")
         
-        if selectedPeople.count == 1 {
-            alert.informativeText = "\(selectedPeople[0].name!) will be removed."
-        } else {
-            alert.informativeText = "\(selectedPeople.count) people will be removed."
-        }
+        let informativeFormat = NSLocalizedString("REMOVE_INFORMATIVE %d", comment: "The remove alert's informativeText")
+        alert.informativeText = String(format: informativeFormat, selectedPeople.count)
         
-        alert.addButtonWithTitle("Remove")
-        alert.addButtonWithTitle("Cancel")
-        alert.addButtonWithTitle("Keep, but no raise")
+        let removeButtonTitle = NSLocalizedString("REMOVE_DO", comment: "The remove alert's remove button")
+        alert.addButtonWithTitle(removeButtonTitle)
+        
+        let removeCancelTitle = NSLocalizedString("REMOVE_CANCEL", comment: "The remove alert's cancel button")
+        alert.addButtonWithTitle(removeCancelTitle)
+        
+        let removeKeepNoRaiseTitle = NSLocalizedString("REMOVE_KEEP_NO_RAISE", comment: "The remove alert's keep but no raise button")
+        alert.addButtonWithTitle(removeKeepNoRaiseTitle)
+        
         let window = sender.window!
         alert.beginSheetModalForWindow(window) { (response) -> Void in
             // If the user chose "Remove" tell the array controller to delete the people
