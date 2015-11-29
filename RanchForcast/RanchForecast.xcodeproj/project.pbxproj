@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0AAD151A1C0A384B007164C6 /* RanchForcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RanchForcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AAD151A1C0A384B007164C6 /* RanchForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RanchForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAD151D1C0A384B007164C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AAD151F1C0A384B007164C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AAD15221C0A384B007164C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		0AAD15111C0A384B007164C6 = {
 			isa = PBXGroup;
 			children = (
-				0AAD151C1C0A384B007164C6 /* RanchForcast */,
+				0AAD151C1C0A384B007164C6 /* RanchForecast */,
 				0AAD151B1C0A384B007164C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,12 +50,12 @@
 		0AAD151B1C0A384B007164C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AAD151A1C0A384B007164C6 /* RanchForcast.app */,
+				0AAD151A1C0A384B007164C6 /* RanchForecast.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0AAD151C1C0A384B007164C6 /* RanchForcast */ = {
+		0AAD151C1C0A384B007164C6 /* RanchForecast */ = {
 			isa = PBXGroup;
 			children = (
 				0AAD151D1C0A384B007164C6 /* AppDelegate.swift */,
@@ -67,15 +67,16 @@
 				0AAD152E1C0A3906007164C6 /* Course.swift */,
 				0AAD15301C0A3A47007164C6 /* ScheduleFetcher.swift */,
 			);
+			name = RanchForecast;
 			path = RanchForcast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AAD15191C0A384B007164C6 /* RanchForcast */ = {
+		0AAD15191C0A384B007164C6 /* RanchForecast */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AAD15271C0A384B007164C6 /* Build configuration list for PBXNativeTarget "RanchForcast" */;
+			buildConfigurationList = 0AAD15271C0A384B007164C6 /* Build configuration list for PBXNativeTarget "RanchForecast" */;
 			buildPhases = (
 				0AAD15161C0A384B007164C6 /* Sources */,
 				0AAD15171C0A384B007164C6 /* Frameworks */,
@@ -85,9 +86,9 @@
 			);
 			dependencies = (
 			);
-			name = RanchForcast;
+			name = RanchForecast;
 			productName = RanchForcast;
-			productReference = 0AAD151A1C0A384B007164C6 /* RanchForcast.app */;
+			productReference = 0AAD151A1C0A384B007164C6 /* RanchForecast.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0AAD15151C0A384B007164C6 /* Build configuration list for PBXProject "RanchForcast" */;
+			buildConfigurationList = 0AAD15151C0A384B007164C6 /* Build configuration list for PBXProject "RanchForecast" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -118,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0AAD15191C0A384B007164C6 /* RanchForcast */,
+				0AAD15191C0A384B007164C6 /* RanchForecast */,
 			);
 		};
 /* End PBXProject section */
@@ -250,7 +251,7 @@
 				INFOPLIST_FILE = RanchForcast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bignerdranch.RanchForcast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RanchForecast;
 			};
 			name = Debug;
 		};
@@ -262,14 +263,14 @@
 				INFOPLIST_FILE = RanchForcast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bignerdranch.RanchForcast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RanchForecast;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0AAD15151C0A384B007164C6 /* Build configuration list for PBXProject "RanchForcast" */ = {
+		0AAD15151C0A384B007164C6 /* Build configuration list for PBXProject "RanchForecast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AAD15251C0A384B007164C6 /* Debug */,
@@ -278,13 +279,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AAD15271C0A384B007164C6 /* Build configuration list for PBXNativeTarget "RanchForcast" */ = {
+		0AAD15271C0A384B007164C6 /* Build configuration list for PBXNativeTarget "RanchForecast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AAD15281C0A384B007164C6 /* Debug */,
 				0AAD15291C0A384B007164C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
