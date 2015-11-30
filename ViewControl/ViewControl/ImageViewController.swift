@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ImageViewController: NSViewController {
+class ImageViewController: NSViewController, ImageRepresentable {
     
     var image: NSImage?
     

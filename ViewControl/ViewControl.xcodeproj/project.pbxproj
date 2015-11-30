@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1AAB6B1C0BFEE100451017 /* NerdTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1AAB6A1C0BFEE100451017 /* NerdTabViewController.swift */; };
+		0A1AAB6D1C0C09FB00451017 /* ImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1AAB6C1C0C09FB00451017 /* ImageRepresentable.swift */; };
 		0A5F358A1C0B61CF000843B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F35891C0B61CF000843B2 /* AppDelegate.swift */; };
 		0A5F358C1C0B61CF000843B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5F358B1C0B61CF000843B2 /* Assets.xcassets */; };
 		0A5F358F1C0B61CF000843B2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5F358D1C0B61CF000843B2 /* MainMenu.xib */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1AAB6A1C0BFEE100451017 /* NerdTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NerdTabViewController.swift; sourceTree = "<group>"; };
+		0A1AAB6C1C0C09FB00451017 /* ImageRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRepresentable.swift; sourceTree = "<group>"; };
 		0A5F35861C0B61CF000843B2 /* ViewControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5F35891C0B61CF000843B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A5F358B1C0B61CF000843B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				0A5F358B1C0B61CF000843B2 /* Assets.xcassets */,
 				0A5F358D1C0B61CF000843B2 /* MainMenu.xib */,
 				0A5F35901C0B61CF000843B2 /* Info.plist */,
+				0A1AAB6A1C0BFEE100451017 /* NerdTabViewController.swift */,
+				0A1AAB6C1C0C09FB00451017 /* ImageRepresentable.swift */,
 			);
 			path = ViewControl;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A5F35981C0B6206000843B2 /* ImageViewController.swift in Sources */,
+				0A1AAB6B1C0BFEE100451017 /* NerdTabViewController.swift in Sources */,
+				0A1AAB6D1C0C09FB00451017 /* ImageRepresentable.swift in Sources */,
 				0A5F358A1C0B61CF000843B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +285,7 @@
 				0A5F35951C0B61CF000843B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
