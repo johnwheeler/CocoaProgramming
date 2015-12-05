@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RanchForecastSplit/RanchForecastSplit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ViewControl/ViewControl.xcodeproj">
    </FileRef>
    <FileRef
