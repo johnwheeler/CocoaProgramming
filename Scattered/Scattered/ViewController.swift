@@ -10,7 +10,14 @@ import Cocoa
 
 class ViewController: NSViewController {
     
+    let processingQueue: NSOperationQueue = {
+        let result = NSOperationQueue()
+        result.maxConcurrentOperationCount = 4
+        return result
+    }()
+    
     var textLayer: CATextLayer!
+    
     var text: String? {
         didSet {
             let font = NSFont.systemFontOfSize(textLayer.fontSize)
@@ -39,33 +46,33 @@ class ViewController: NSViewController {
     }
     
     func addImagesFromFolderURL(folderURL: NSURL) {
-        let t0 = NSDate.timeIntervalSinceReferenceDate()
-        
-        let fileManager = NSFileManager()
-        let directoryEnumerator = fileManager.enumeratorAtURL(folderURL, includingPropertiesForKeys: nil, options: [], errorHandler: nil)!
-        var allowedFiles = 10
-        
-        while let url = directoryEnumerator.nextObject() as? NSURL {
-            // Skip directories
-            var isDirectoryValue: AnyObject?
-            try! url.getResourceValue(&isDirectoryValue, forKey: NSURLIsDirectoryKey)
+        processingQueue.addOperationWithBlock {
+            let t0 = NSDate.timeIntervalSinceReferenceDate()
             
-            if let isDirectory = isDirectoryValue as? Bool
-                where isDirectory.boolValue == false {
-                    let image = NSImage(contentsOfURL: url)
-                    if let image = image {
-                        allowedFiles--
-                        if allowedFiles < 0 {
-                            break
+            let fileManager = NSFileManager()
+            let directoryEnumerator = fileManager.enumeratorAtURL(folderURL, includingPropertiesForKeys: nil, options: [], errorHandler: nil)!
+            
+            while let url = directoryEnumerator.nextObject() as? NSURL {
+                // Skip directories
+                var isDirectoryValue: AnyObject?
+                try! url.getResourceValue(&isDirectoryValue, forKey: NSURLIsDirectoryKey)
+                
+                if let isDirectory = isDirectoryValue as? Bool
+                    where isDirectory.boolValue == false {
+                        self.processingQueue.addOperationWithBlock {
+                            let image = NSImage(contentsOfURL: url)
+                            if let image = image {
+                                let thumbImage = self.thumbImageFromImage(image)
+                                
+                                NSOperationQueue.mainQueue().addOperationWithBlock {
+                                    self.presentImage(thumbImage)
+                                    let t1 = NSDate.timeIntervalSinceReferenceDate()
+                                    let interval = t1 - t0
+                                    self.text = String(format: "%0.1fs", interval)
+                                }
+                            }
                         }
-                        
-                        let thumbImage = thumbImageFromImage(image)
-                        
-                        presentImage(thumbImage)
-                        let t1 = NSDate.timeIntervalSinceReferenceDate()
-                        let interval = t1 - t0
-                        text = String(format: "%0.1fs", interval)
-                    }
+                }
             }
         }
     }
