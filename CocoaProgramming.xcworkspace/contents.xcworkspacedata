@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:iPing/iPing.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ZIPspector/ZIPspector.xcodeproj">
    </FileRef>
    <FileRef
