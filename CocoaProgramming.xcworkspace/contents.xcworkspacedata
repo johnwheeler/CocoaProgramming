@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ZIPspector/ZIPspector.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Scattered/Scattered.xcodeproj">
    </FileRef>
    <FileRef
